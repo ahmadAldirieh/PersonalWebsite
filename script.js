@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 6. Typewriter Effect in Hero
   const typewriterElement = document.getElementById('typewriter');
-  const words = ["Software Engineer", "Web Developer", "Creative Thinker", "Problem Solver"];
+  const words = ["Electrical Engineering Student", "Software Developer", "Hardware Designer", "Problem Solver"];
   let wordIndex = 0;
   let charIndex = 0;
   let isDeleting = false;

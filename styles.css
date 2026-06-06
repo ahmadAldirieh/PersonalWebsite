@@ -509,10 +509,87 @@ button {
   align-items: start;
 }
 
+.about-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
 .about-text p {
   margin-bottom: 20px;
   font-size: 1.05rem;
   color: var(--text-secondary);
+}
+
+.education-card, .awards-card {
+  padding: 24px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: border-color var(--transition-speed);
+}
+
+.education-card:hover, .awards-card:hover {
+  border-color: var(--accent-color);
+}
+
+.about-sub-title {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+.edu-date {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.edu-degree {
+  font-size: 1.1rem;
+  margin: 4px 0 2px 0;
+  line-height: 1.3;
+}
+
+.edu-school {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.edu-courses {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.awards-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.awards-list li {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 18px;
+  line-height: 1.4;
+}
+
+.awards-list li:last-child {
+  margin-bottom: 0;
+}
+
+.awards-list li::before {
+  content: "•";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
 }
 
 .skills-wrapper {
