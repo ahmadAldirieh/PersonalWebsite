@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frenzy Flyer | Ahmad Aldirieh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">AA</a>
+      <nav class="nav-links"><a href="index.html#about" class="nl">About</a><a href="index.html#experience" class="nl">Experience</a><a href="index.html#projects" class="nl">Projects</a><a href="index.html#contact" class="nl">Contact</a></nav>
+      <div class="nav-right">
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">
+          <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mob-menu" id="mob-menu">
+      <a href="index.html#about" class="mm-link">About</a>
+      <a href="index.html#experience" class="mm-link">Experience</a>
+      <a href="index.html#projects" class="mm-link">Projects</a>
+      <a href="index.html#contact" class="mm-link">Contact</a>
+    </div>
+  </header>
+
+  <main class="proj-page">
+    <div class="wrap">
+      <a href="index.html#projects" class="back-link">← Back to Projects</a>
+
+      <div class="pp-header">
+        <div class="pp-meta"><span class="pcat">Game Dev</span><span class="pcat">Python</span></div>
+        <h1 class="pp-title">Frenzy Flyer</h1>
+        <p class="pp-sub">Python Arcade Game</p>
+        <a href="https://github.com/ahmadAldirieh/FrenzyFlyer" target="_blank" rel="noopener" class="pp-gh-link">View on GitHub ↗</a>
+      </div>
+
+      <div class="gallery">
+        <div class="gallery-main" id="gallery-main">
+          <video class="active-media" controls playsinline autoplay muted loop>
+            <source src="media/frenzy_flyer.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="gallery-thumbs">
+          <div class="gthumb gthumb-vid active" data-type="video" data-src="media/frenzy_flyer.mp4">
+            <span class="gt-play">&#9654;</span><span class="gt-label">Gameplay</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pp-body">
+        <div class="pp-desc">
+          <h2 class="pp-section-title">About the Project</h2>
+          <p>Frenzy Flyer is a Python arcade game built with Pygame. The player navigates a flying character through an endless stream of obstacles, surviving as long as possible while the difficulty ramps up.</p>
+          <p>Building this sharpened my understanding of game loop design, frame-rate-independent physics, collision detection, and event-driven programming. A personal project to explore Python beyond data work.</p>
+        </div>
+        <div class="pp-stack">
+          <h2 class="pp-section-title">Tech Stack</h2>
+          <div class="proj-stack"><span>Python</span><span>Pygame</span><span>Game Loop Design</span><span>Collision Detection</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer"><span>&copy; <span id="yr"></span> Ahmad Aldirieh</span><span>Waterloo, ON</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
