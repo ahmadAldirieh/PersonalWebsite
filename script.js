@@ -19,73 +19,47 @@ mobMenu.querySelectorAll('.mm-link').forEach(l => l.addEventListener('click', ()
 
 // Scroll reveal
 const revEls = document.querySelectorAll('.reveal');
-const ro = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      e.target.style.transitionDelay = (i * 0.08) + 's';
-      e.target.classList.add('vis');
-      ro.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.08 });
-revEls.forEach(el => ro.observe(el));
+if (revEls.length) {
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = (i * 0.08) + 's';
+        e.target.classList.add('vis');
+        ro.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revEls.forEach(el => ro.observe(el));
+}
 
-// Active nav
+// Active nav (index only)
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nl');
-window.addEventListener('scroll', () => {
-  let cur = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
-  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
-}, { passive: true });
-
-// Firefighter gallery switcher
-const mainVideo = document.querySelector('.proj-video');
-const thumbs = document.querySelectorAll('.ph-thumb');
-const vidThumbs = document.querySelectorAll('.ph-vid-thumb');
-
-thumbs.forEach(thumb => {
-  thumb.addEventListener('click', () => {
-    // Switch to image view — hide video, show image
-    thumbs.forEach(t => t.classList.remove('active'));
-    thumb.classList.add('active');
-    const mainEl = document.querySelector('.ph-main');
-    // Replace main content with image
-    mainEl.innerHTML = `<img src="${thumb.src}" alt="" style="width:100%;max-height:320px;object-fit:cover;display:block;">`;
-  });
-});
-
-vidThumbs.forEach(vt => {
-  vt.addEventListener('click', () => {
-    const src = vt.dataset.video;
-    const mainEl = document.querySelector('.ph-main');
-    mainEl.innerHTML = `<video class="proj-video" controls playsinline autoplay style="width:100%;max-height:320px;object-fit:cover;"><source src="${src}" type="video/mp4"></video>`;
-    thumbs.forEach(t => t.classList.remove('active'));
-  });
-});
-
-// Lightbox for sumo battle video
-const lightbox = document.getElementById('lightbox');
-const lbVideo = document.getElementById('lb-video');
-const lbClose = document.getElementById('lb-close');
-
-document.querySelectorAll('.vid-overlay').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const src = btn.dataset.video;
-    lbVideo.innerHTML = `<source src="${src}" type="video/mp4">`;
-    lbVideo.load();
-    lbVideo.play();
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-function closeLightbox() {
-  lightbox.classList.remove('open');
-  lbVideo.pause();
-  lbVideo.innerHTML = '';
-  document.body.style.overflow = '';
+if (sections.length) {
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+  }, { passive: true });
 }
-lbClose.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+// Gallery switcher (project pages)
+const galleryMain = document.getElementById('gallery-main');
+const gthumbs = document.querySelectorAll('.gthumb');
+if (galleryMain && gthumbs.length) {
+  gthumbs.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      gthumbs.forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+
+      const type = thumb.dataset.type;
+      const src = thumb.dataset.src;
+
+      if (type === 'video') {
+        galleryMain.innerHTML = `<video class="active-media" controls playsinline autoplay style="width:100%;height:100%;object-fit:contain;background:#000;"><source src="${src}" type="video/mp4"></video>`;
+      } else {
+        galleryMain.innerHTML = `<img src="${src}" alt="" class="active-media" style="width:100%;height:100%;object-fit:cover;">`;
+      }
+    });
+  });
+}
