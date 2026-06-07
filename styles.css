@@ -438,8 +438,17 @@ a.exp-co:hover{color:var(--accent)}
   aspect-ratio: 4/3;
   overflow: hidden;
   background: var(--bg2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.pc-img-wrap img,
+.pc-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s var(--ease);
+  padding: 6px;
+}
 .pc-img-wrap video {
   width: 100%; height: 100%;
   object-fit: cover;
@@ -447,7 +456,7 @@ a.exp-co:hover{color:var(--accent)}
   transition: transform 0.4s var(--ease);
 }
 .proj-card:hover .pc-img-wrap img,
-.proj-card:hover .pc-img-wrap video { transform: scale(1.04); }
+.proj-card:hover .pc-img-wrap video { transform: scale(1.03); }
 .pc-hover-overlay {
   position: absolute; inset: 0;
   background: rgba(0,0,0,0.5);
@@ -520,7 +529,8 @@ a.exp-co:hover{color:var(--accent)}
 }
 .gallery-main .active-media {
   width: 100%; height: 100%;
-  object-fit: cover; display: block;
+  object-fit: contain; display: block;
+  background: var(--bg2);
 }
 .gallery-main video.active-media { object-fit: contain; background: #000; }
 .gallery-thumbs {
