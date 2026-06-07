@@ -1,4 +1,3 @@
-// Year
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 // Theme
@@ -9,18 +8,17 @@ themeBtn.addEventListener('click', () => {
   const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
-  initCanvas(); // re-init canvas with new color
+  initCanvas();
 });
 
 // ===== PARTICLE CANVAS =====
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
-let particles = [];
-let animId;
+let particles = [], animId;
 
-function getAccentRGB() {
-  const theme = document.documentElement.getAttribute('data-theme');
-  return theme === 'dark' ? [255, 107, 53] : [232, 68, 10];
+function getColor() {
+  return document.documentElement.getAttribute('data-theme') === 'dark'
+    ? [0, 212, 170] : [0, 138, 110];
 }
 
 function resize() {
@@ -33,45 +31,43 @@ class Particle {
   reset(initial) {
     this.x = Math.random() * canvas.width;
     this.y = initial ? Math.random() * canvas.height : canvas.height + 10;
-    this.size = Math.random() * 1.5 + 0.3;
-    this.speedX = (Math.random() - 0.5) * 0.3;
-    this.speedY = -(Math.random() * 0.4 + 0.1);
-    this.opacity = Math.random() * 0.5 + 0.1;
+    this.size = Math.random() * 1.4 + 0.3;
+    this.speedX = (Math.random() - 0.5) * 0.25;
+    this.speedY = -(Math.random() * 0.35 + 0.1);
     this.life = 0;
-    this.maxLife = Math.random() * 400 + 200;
+    this.maxLife = Math.random() * 420 + 200;
+  }
+  get alpha() {
+    const t = this.life / this.maxLife;
+    return t < 0.1 ? t * 5 * 0.45 : t > 0.8 ? (1 - t) * 5 * 0.45 : 0.45;
   }
   update() {
     this.x += this.speedX;
     this.y += this.speedY;
     this.life++;
-    // fade in/out
-    const t = this.life / this.maxLife;
-    this.opacity = t < 0.1 ? t * 5 * 0.5 : t > 0.8 ? (1 - t) * 5 * 0.5 : 0.5;
     if (this.life >= this.maxLife || this.y < -10) this.reset(false);
   }
   draw() {
-    const [r, g, b] = getAccentRGB();
+    const [r, g, b] = getColor();
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${r},${g},${b},${this.opacity})`;
+    ctx.fillStyle = `rgba(${r},${g},${b},${this.alpha})`;
     ctx.fill();
   }
 }
 
-// Connection lines between nearby particles
 function drawConnections() {
-  const [r, g, b] = getAccentRGB();
+  const [r, g, b] = getColor();
   for (let i = 0; i < particles.length; i++) {
     for (let j = i + 1; j < particles.length; j++) {
       const dx = particles[i].x - particles[j].x;
       const dy = particles[i].y - particles[j].y;
       const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 120) {
-        const alpha = (1 - dist / 120) * 0.08;
+      if (dist < 110) {
         ctx.beginPath();
         ctx.moveTo(particles[i].x, particles[i].y);
         ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.strokeStyle = `rgba(${r},${g},${b},${alpha})`;
+        ctx.strokeStyle = `rgba(${r},${g},${b},${(1 - dist / 110) * 0.07})`;
         ctx.lineWidth = 0.5;
         ctx.stroke();
       }
@@ -89,13 +85,12 @@ function animate() {
 function initCanvas() {
   cancelAnimationFrame(animId);
   resize();
-  // Use fewer particles for performance — 60 is plenty
-  const count = Math.min(60, Math.floor((canvas.width * canvas.height) / 18000));
+  const count = Math.min(55, Math.floor((canvas.width * canvas.height) / 20000));
   particles = Array.from({ length: count }, () => new Particle());
   animate();
 }
 
-window.addEventListener('resize', () => { resize(); });
+window.addEventListener('resize', () => { resize(); }, { passive: true });
 initCanvas();
 
 // Mobile nav
