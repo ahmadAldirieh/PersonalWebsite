@@ -13,17 +13,6 @@
 </head>
 <body>
 
-  <canvas id="bg-canvas"></canvas>
-
-  <!-- schematic SVG overlay -->
-  <svg class="schem-overlay" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <!-- left vertical bus -->
-    <line class="sbus" x1="48" y1="0" x2="48" y2="100%"/>
-    <!-- right vertical bus -->
-    <line class="sbus" x1="calc(100% - 48px)" y1="0" x2="calc(100% - 48px)" y2="100%"/>
-    <!-- horizontal traces at section breaks - drawn via CSS -->
-  </svg>
-
   <header class="nav" id="nav">
     <div class="nav-inner">
       <a href="index.html" class="logo">AA</a>
@@ -60,83 +49,24 @@
         <span class="hn-solid">Ahmad</span>
         <span class="hn-outline">Aldirieh</span>
       </h1>
-      <div class="hero-annotation">
-        <span class="ha-line"></span>
-        <span>EE @ Waterloo &nbsp;&bull;&nbsp; Hardware &nbsp;&bull;&nbsp; Software &nbsp;&bull;&nbsp; Robotics</span>
-      </div>
+      <p class="hero-subtitle">EE @ Waterloo &nbsp;&bull;&nbsp; Hardware &nbsp;&bull;&nbsp; Software &nbsp;&bull;&nbsp; Robotics</p>
       <p class="hero-bio">I build things end to end. Autonomous robots, custom PCBs, ML research, and the code to tie it all together. Currently studying Electrical Engineering at UWaterloo.</p>
       <div class="hero-cta">
         <a href="#projects" class="btn-main">See my work ↓</a>
         <a href="mailto:a2aldiri@uwaterloo.ca" class="btn-ghost">a2aldiri@uwaterloo.ca</a>
-        <a href="resume.pdf" target="_blank" rel="noopener" class="btn-ghost" id="resume-btn">Resume ↗</a>
+        <a href="resume.pdf" target="_blank" rel="noopener" class="btn-ghost">Resume ↗</a>
       </div>
       <div class="hero-socials">
         <a href="http://linkedin.com/in/ahmad-dirieh" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a href="https://github.com/ahmadAldirieh" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </div>
-    <!-- schematic component block in hero -->
-    <div class="hero-schem" aria-hidden="true">
-      <div class="schem-ic">
-        <div class="ic-label">MCU</div>
-        <div class="ic-body">
-          <div class="ic-pins ic-pins-left">
-            <div class="ic-pin"><span class="pin-num">1</span><span class="pin-name">VCC</span></div>
-            <div class="ic-pin"><span class="pin-num">2</span><span class="pin-name">GPIO0</span></div>
-            <div class="ic-pin"><span class="pin-num">3</span><span class="pin-name">GPIO1</span></div>
-            <div class="ic-pin"><span class="pin-num">4</span><span class="pin-name">SDA</span></div>
-            <div class="ic-pin"><span class="pin-num">5</span><span class="pin-name">SCL</span></div>
-          </div>
-          <div class="ic-center">
-            <div class="ic-name">AA</div>
-            <div class="ic-partnum">UW-EE-2030</div>
-          </div>
-          <div class="ic-pins ic-pins-right">
-            <div class="ic-pin"><span class="pin-name">TX</span><span class="pin-num">8</span></div>
-            <div class="ic-pin"><span class="pin-name">RX</span><span class="pin-num">7</span></div>
-            <div class="ic-pin"><span class="pin-name">PWM</span><span class="pin-num">6</span></div>
-            <div class="ic-pin"><span class="pin-name">GND</span><span class="pin-num">5</span></div>
-            <div class="ic-pin"><span class="pin-name">RST</span><span class="pin-num">4</span></div>
-          </div>
-        </div>
-        <div class="ic-ref">U1</div>
+
+    <!-- SCHEMATIC IC -->
+    <div class="hero-schem">
+      <div class="schem-canvas-wrap">
+        <canvas id="schem-canvas"></canvas>
       </div>
-      <!-- connecting traces from IC -->
-      <svg class="ic-traces" viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
-        <!-- left side traces -->
-        <line x1="0" y1="55" x2="40" y2="55" class="tr"/>
-        <line x1="0" y1="80" x2="40" y2="80" class="tr"/>
-        <line x1="0" y1="105" x2="40" y2="105" class="tr"/>
-        <line x1="0" y1="130" x2="40" y2="130" class="tr"/>
-        <line x1="0" y1="155" x2="40" y2="155" class="tr"/>
-        <!-- right side traces -->
-        <line x1="260" y1="55" x2="300" y2="55" class="tr"/>
-        <line x1="260" y1="80" x2="300" y2="80" class="tr"/>
-        <line x1="260" y1="105" x2="300" y2="105" class="tr"/>
-        <line x1="260" y1="130" x2="300" y2="130" class="tr"/>
-        <line x1="260" y1="155" x2="300" y2="155" class="tr"/>
-        <!-- node dots -->
-        <circle cx="0" cy="55" r="3" class="nd"/>
-        <circle cx="0" cy="80" r="3" class="nd"/>
-        <circle cx="0" cy="105" r="3" class="nd"/>
-        <circle cx="0" cy="130" r="3" class="nd"/>
-        <circle cx="0" cy="155" r="3" class="nd"/>
-        <circle cx="300" cy="55" r="3" class="nd"/>
-        <circle cx="300" cy="80" r="3" class="nd"/>
-        <circle cx="300" cy="105" r="3" class="nd"/>
-        <circle cx="300" cy="130" r="3" class="nd"/>
-        <circle cx="300" cy="155" r="3" class="nd"/>
-        <!-- resistor symbols top -->
-        <text x="120" y="20" class="schem-label">VCC</text>
-        <line x1="150" y1="25" x2="150" y2="35" class="tr"/>
-        <rect x="138" y="35" width="24" height="10" class="comp-rect"/>
-        <line x1="150" y1="45" x2="150" y2="55" class="tr"/>
-        <!-- GND symbol -->
-        <line x1="150" y1="165" x2="150" y2="175" class="tr"/>
-        <line x1="140" y1="175" x2="160" y2="175" class="tr"/>
-        <line x1="143" y1="179" x2="157" y2="179" class="tr-dim"/>
-        <line x1="146" y1="183" x2="154" y2="183" class="tr-dim"/>
-      </svg>
     </div>
   </section>
 
@@ -144,20 +74,13 @@
 
   <!-- ABOUT -->
   <section class="section" id="about">
-    <div class="schem-section-bar" aria-hidden="true">
-      <div class="ssb-line"></div>
-      <div class="ssb-node"></div>
-      <div class="ssb-label">SECTION_01</div>
-      <div class="ssb-node"></div>
-      <div class="ssb-line"></div>
-    </div>
     <div class="wrap">
       <div class="sec-label">01 &mdash; About</div>
       <div class="about-layout">
         <div class="about-left">
           <h2 class="sec-big-title">Who I am.</h2>
           <p class="about-p">I'm an Electrical Engineering student at the <strong>University of Waterloo</strong> (BASc, expected 2030). I work on both sides of the stack: hardware and software. From designing schematics in EPLAN and laying out PCBs in Altium, to writing code and contributing to ML research.</p>
-          <p class="about-p">Outside of engineering, I'm a competitive powerlifter working toward the 1000 lb club — currently sitting around 850 lbs total. I hit a 275 lb bench and I'm not stopping there. I play chess too, though at 800 rated I mostly just enjoy losing creatively. I'm a Barcelona fan through and through, and I follow Spurs on the side. I've been getting into game design with Unity as a side pursuit, learning it alongside everything else.</p>
+          <p class="about-p">Outside of engineering, I go to the gym and powerlift — working toward the 1000 lb club, currently around 850 lbs total with a 275 lb bench. I play chess too, sitting at 800 rated and mostly just enjoying losing creatively. Barcelona fan through and through.</p>
         </div>
         <div class="about-right">
           <div class="skills-block">
@@ -177,7 +100,7 @@
             <div class="sk-group">
               <div class="sk-label">Software</div>
               <div class="sk-tags">
-                <span>Pandas</span><span>Git</span><span>Pygame</span><span>Machine Learning</span><span>Unity</span>
+                <span>Pandas</span><span>Git</span><span>Pygame</span><span>Machine Learning</span>
               </div>
             </div>
           </div>
@@ -188,13 +111,6 @@
 
   <!-- EXPERIENCE -->
   <section class="section section-alt" id="experience">
-    <div class="schem-section-bar" aria-hidden="true">
-      <div class="ssb-line"></div>
-      <div class="ssb-node"></div>
-      <div class="ssb-label">SECTION_02</div>
-      <div class="ssb-node"></div>
-      <div class="ssb-line"></div>
-    </div>
     <div class="wrap">
       <div class="sec-label">02 &mdash; Experience</div>
       <h2 class="sec-big-title">Where I've worked.</h2>
@@ -249,7 +165,7 @@
               </div>
               <span class="exp-chip">Nov 2024 to Feb 2025</span>
             </div>
-            <p class="exp-desc">Contributed to a predictive maintenance project for CNC mill blades. Prepared datasets and supported training of an ML model for Remaining Useful Life (RUL) estimation. Documented outputs to validate reliability and reduce industrial downtime.</p>
+            <p class="exp-desc">Contributed to a predictive maintenance project for CNC mill blades. Prepared datasets and supported training of an ML model for Remaining Useful Life estimation. Documented outputs to validate reliability and reduce industrial downtime.</p>
             <div class="exp-tags"><span>Python</span><span>Pandas</span><span>ML</span><span>RUL</span></div>
           </div>
         </div>
@@ -267,7 +183,7 @@
               </div>
               <span class="exp-chip">Jun to Jul 2024</span>
             </div>
-            <p class="exp-desc">Designed motor control centers (Ri4Power) in EPLAN, created 3D macros, and designed copper busbar systems. Coordinated modifications at the assembly center and provided technical input in client meetings.</p>
+            <p class="exp-desc">Designed motor control centers in EPLAN, created 3D macros, and designed copper busbar systems. Coordinated modifications at the assembly center and provided technical input in client meetings.</p>
             <div class="exp-tags"><span>EPLAN</span><span>MCC Design</span><span>3D Macros</span><span>Busbar</span></div>
           </div>
         </div>
@@ -278,13 +194,6 @@
 
   <!-- PROJECTS -->
   <section class="section" id="projects">
-    <div class="schem-section-bar" aria-hidden="true">
-      <div class="ssb-line"></div>
-      <div class="ssb-node"></div>
-      <div class="ssb-label">SECTION_03</div>
-      <div class="ssb-node"></div>
-      <div class="ssb-line"></div>
-    </div>
     <div class="wrap">
       <div class="sec-label">03 &mdash; Projects</div>
       <h2 class="sec-big-title">Things I've built.</h2>
@@ -380,13 +289,6 @@
 
   <!-- CONTACT -->
   <section class="section section-alt" id="contact">
-    <div class="schem-section-bar" aria-hidden="true">
-      <div class="ssb-line"></div>
-      <div class="ssb-node"></div>
-      <div class="ssb-label">SECTION_04</div>
-      <div class="ssb-node"></div>
-      <div class="ssb-line"></div>
-    </div>
     <div class="wrap contact-wrap">
       <div class="sec-label">04 &mdash; Contact</div>
       <h2 class="contact-heading">Let's build<br>something.</h2>
@@ -403,7 +305,7 @@
 
   <footer class="footer">
     <span>&copy; <span id="yr"></span> Ahmad Aldirieh</span>
-    <span class="footer-mono">// Waterloo, ON</span>
+    <span class="footer-mono">Waterloo, ON</span>
   </footer>
 
   <script src="script.js"></script>
