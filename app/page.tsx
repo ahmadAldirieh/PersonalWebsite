@@ -75,7 +75,8 @@ export default function Home() {
       <main>
 
         {/* ── HERO ── */}
-        <section id="hero" className="min-h-screen flex flex-col justify-center pt-32 pb-20 px-8 max-w-6xl mx-auto relative z-10">
+        <section id="hero" className="min-h-screen flex flex-col justify-center w-full relative z-10">
+        <div className="max-w-6xl mx-auto w-full px-8 pt-32 pb-20">
           <div className="flex items-center gap-2.5 font-mono-custom text-xs text-[#5a7a6e] mb-8 tracking-widest">
             <span className="w-2 h-2 rounded-full bg-[var(--accent)] status-glow" />
             Open to co-ops &amp; internships
@@ -113,6 +114,7 @@ export default function Home() {
                 className="font-mono-custom text-xs text-[#2a3e36] hover:text-accent transition-colors">{label}</a>
             ))}
           </div>
+        </div>
         </section>
 
         {/* ── ABOUT ── */}
