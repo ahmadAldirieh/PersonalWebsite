@@ -63,8 +63,8 @@ body{background:var(--bg);color:var(--fg);font-family:var(--ff-body);font-weight
 /* ── NAV ── */
 .nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border2);transition:background 0.3s;}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;}
-.logo{font-family:var(--ff-mono);font-size:0.95rem;font-weight:500;color:var(--accent);letter-spacing:0.14em;display:flex;align-items:center;gap:7px;}
-.logo::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 7px var(--accent);}
+.logo{font-family:var(--ff-mono);font-size:0.95rem;font-weight:500;color:var(--accent);letter-spacing:0.14em;display:flex;align-items:center;gap:7px;}.logo-plain{font-family:var(--ff-mono);font-size:0.95rem;font-weight:500;color:var(--accent);letter-spacing:0.14em;}
+
 .nav-links{display:flex;gap:2rem;}
 .nl{font-family:var(--ff-mono);font-size:0.68rem;color:var(--fg2);letter-spacing:0.06em;transition:color 0.2s;}
 .nl:hover,.nl.active{color:var(--accent);}
@@ -122,7 +122,7 @@ body{background:var(--bg);color:var(--fg);font-family:var(--ff-body);font-weight
 .about-p{color:var(--fg2);margin-bottom:1.2rem;font-size:0.975rem;line-height:1.85;}
 .about-p strong{color:var(--fg);font-weight:500;}
 .skills-block{border:1px solid var(--border2);padding:1.75rem;background:var(--bg2);position:relative;border-radius:2px;}
-.skills-block::before{content:'U1';position:absolute;top:-9px;left:10px;font-family:var(--ff-mono);font-size:0.55rem;color:var(--fg3);background:var(--bg2);padding:0 6px;letter-spacing:0.1em;}
+
 .sk-heading{font-family:var(--ff-mono);font-size:0.65rem;font-weight:500;color:var(--accent);margin-bottom:1.5rem;letter-spacing:0.12em;text-transform:uppercase;}
 .sk-group{margin-bottom:1.4rem;}
 .sk-group:last-child{margin-bottom:0;}
