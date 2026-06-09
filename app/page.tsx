@@ -72,7 +72,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main>
+      <main className="w-full">
 
         {/* ── HERO ── */}
         <section id="hero" className="min-h-screen flex flex-col justify-center w-full relative z-10">
@@ -118,8 +118,8 @@ export default function Home() {
         </section>
 
         {/* ── ABOUT ── */}
-        <section id="about" className="py-24 relative z-10">
-          <div className="max-w-6xl mx-auto px-8">
+        <section id="about" className="py-24 relative z-10 w-full">
+          <div className="max-w-6xl mx-auto w-full px-8">
             <div className="font-mono-custom text-xs tracking-[0.14em] text-accent mb-3 uppercase">01 — About</div>
             <h2 className="mb-12 text-[clamp(2rem,4vw,3.5rem)] font-bold tracking-tight leading-none"
               style={{ fontFamily: "'Unbounded', sans-serif" }}>Who I am.</h2>
@@ -153,8 +153,8 @@ export default function Home() {
         </section>
 
         {/* ── EXPERIENCE ── */}
-        <section id="experience" className="py-24 relative z-10" style={{ background: "var(--bg1,#0a0e12)" }}>
-          <div className="max-w-6xl mx-auto px-8">
+        <section id="experience" className="py-24 relative z-10 w-full" style={{ background: "var(--bg1,#0a0e12)" }}>
+          <div className="max-w-6xl mx-auto w-full px-8">
             <div className="font-mono-custom text-xs tracking-[0.14em] text-accent mb-3 uppercase">02 — Experience</div>
             <h2 className="mb-12 text-[clamp(2rem,4vw,3.5rem)] font-bold tracking-tight leading-none"
               style={{ fontFamily: "'Unbounded', sans-serif" }}>Where I&apos;ve worked.</h2>
@@ -197,8 +197,8 @@ export default function Home() {
         </section>
 
         {/* ── PROJECTS ── */}
-        <section id="projects" className="py-24 relative z-10">
-          <div className="max-w-6xl mx-auto px-8">
+        <section id="projects" className="py-24 relative z-10 w-full">
+          <div className="max-w-6xl mx-auto w-full px-8">
             <div className="font-mono-custom text-xs tracking-[0.14em] text-accent mb-3 uppercase">03 — Projects</div>
             <h2 className="mb-12 text-[clamp(2rem,4vw,3.5rem)] font-bold tracking-tight leading-none"
               style={{ fontFamily: "'Unbounded', sans-serif" }}>Things I&apos;ve built.</h2>
@@ -213,8 +213,8 @@ export default function Home() {
         </section>
 
         {/* ── CONTACT ── */}
-        <section id="contact" className="py-24 relative z-10" style={{ background: "var(--bg1,#0a0e12)" }}>
-          <div className="max-w-6xl mx-auto px-8 flex flex-col gap-6">
+        <section id="contact" className="py-24 relative z-10 w-full" style={{ background: "var(--bg1,#0a0e12)" }}>
+          <div className="max-w-6xl mx-auto w-full px-8 flex flex-col gap-6">
             <div className="font-mono-custom text-xs tracking-[0.14em] text-accent uppercase">04 — Contact</div>
             <h2 className="text-[clamp(2.5rem,6.5vw,5.5rem)] font-black tracking-tight leading-none"
               style={{ fontFamily: "'Unbounded', sans-serif" }}>
@@ -239,7 +239,7 @@ export default function Home() {
         </section>
 
       </main>
-      <footer className="max-w-6xl mx-auto px-8 py-6 border-t flex justify-between font-mono-custom text-[10px] text-[#2a3e36]"
+      <footer className="max-w-6xl mx-auto w-full px-8 py-6 border-t flex justify-between font-mono-custom text-[10px] text-[#2a3e36]"
         style={{ borderColor: "rgba(0,220,180,0.1)" }}>
         <span>© {new Date().getFullYear()} Ahmad Aldirieh</span>
         <span>Waterloo, ON</span>
