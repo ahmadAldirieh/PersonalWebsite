@@ -1,6 +1,6 @@
 # ahmadaldirieh.com
 
-Personal portfolio website for Ahmad Aldirieh — Electrical Engineering student at the University of Waterloo.
+Personal portfolio website for Ahmad Aldirieh
 
 ## Tech Stack
 
