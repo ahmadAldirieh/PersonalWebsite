@@ -4,33 +4,57 @@ Personal portfolio website for Ahmad Aldirieh — Electrical Engineering student
 
 ## Tech Stack
 
-Pure vanilla HTML, CSS, and JavaScript. No frameworks, no build tools, no dependencies.
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router, static export)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Fonts:** Unbounded, DM Sans, DM Mono (Google Fonts)
+- **Deployment:** Vercel (auto-deploys on push to main)
 
-## Structure
+No third-party component libraries. All UI is custom.
+
+## Project Structure
 
 ```
 /
-├── index.html                  # Main page
-├── styles.css                  # All styles
-├── script.js                   # Theme toggle, scroll reveal, gallery, nav
-├── favicon.svg                 # AA favicon
-├── resume.pdf                  # Resume
-├── project-firefighter.html    # Inferno-1400 project page
-├── project-hrvita.html         # HRVita project page
-├── project-frenzyflyer.html    # Frenzy Flyer project page
-├── project-sumo.html           # Sumo robot project page
-├── project-linefollower.html   # Line follower project page
-└── media/                      # Compressed images and videos
+├── app/
+│   ├── layout.tsx              # Root layout, metadata, fonts
+│   ├── page.tsx                # Home page (Hero, About, Experience, Projects, Contact)
+│   ├── globals.css             # Global styles, CSS variables, Tailwind
+│   └── projects/[slug]/
+│       └── page.tsx            # Dynamic project detail pages (statically generated)
+├── components/
+│   ├── Nav.tsx                 # Sticky nav with theme toggle + mobile menu
+│   ├── ProjectCard.tsx         # Project grid card
+│   └── ProjectGallery.tsx      # Interactive photo/video gallery (client component)
+├── lib/
+│   └── projects.ts             # All project data (single source of truth)
+└── public/
+    ├── favicon.svg
+    ├── resume.pdf
+    └── media/                  # Compressed images and videos
 ```
 
 ## Features
 
-- Dark / light mode toggle (persisted via localStorage)
-- Scroll reveal animations
-- Per-project gallery with photo and video switching
+- Dark / light mode toggle (persisted via `localStorage`)
+- Scroll reveal animations via `IntersectionObserver`
+- Per-project gallery with clickable photo and video switching
+- Fully static export — no server required
 - Fully responsive
-- No JavaScript frameworks or CSS preprocessors
 
-## Deployment
+## Running Locally
 
-Hosted via Vercel, auto-deploys on push to main.
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Building
+
+```bash
+npm run build
+```
+
+Outputs a fully static site to `/out`.
