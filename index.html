@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ahmad Aldirieh — EE Student at UWaterloo.">
+  <title>Ahmad Aldirieh</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">AA</a>
+      <nav class="nav-links">
+        <a href="#about" class="nl">About</a>
+        <a href="#experience" class="nl">Experience</a>
+        <a href="#projects" class="nl">Projects</a>
+        <a href="#contact" class="nl">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">
+          <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mob-menu" id="mob-menu">
+      <a href="#about" class="mm-link">About</a>
+      <a href="#experience" class="mm-link">Experience</a>
+      <a href="#projects" class="mm-link">Projects</a>
+      <a href="#contact" class="mm-link">Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero hero-simple" id="hero">
+    <div class="hero-inner">
+      <div class="hero-status">
+        <span class="status-dot"></span>
+        <span>Open to co-ops &amp; internships</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="hn-solid">Ahmad</span>
+        <span class="hn-solid hn-accent">Aldirieh</span>
+      </h1>
+      <p class="hero-subtitle">EE @ Waterloo &nbsp;&bull;&nbsp; Hardware &nbsp;&bull;&nbsp; Software &nbsp;&bull;&nbsp; Robotics</p>
+      <p class="hero-bio">I build things end to end. Autonomous robots, custom PCBs, ML research, and the code to tie it all together. Currently studying Electrical Engineering at UWaterloo.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-main">See my work ↓</a>
+        <a href="mailto:a2aldiri@uwaterloo.ca" class="btn-ghost">a2aldiri@uwaterloo.ca</a>
+        <a href="resume.pdf" target="_blank" rel="noopener" class="btn-ghost">Resume ↗</a>
+      </div>
+      <div class="hero-socials">
+        <a href="http://linkedin.com/in/ahmad-dirieh" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/ahmadAldirieh" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+
+  </section>
+
+  <main>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="sec-label">01 &mdash; About</div>
+      <div class="about-layout">
+        <div class="about-left">
+          <h2 class="sec-big-title">Who I am.</h2>
+          <p class="about-p">I'm an Electrical Engineering student at the <strong>University of Waterloo</strong> (BASc, expected 2030). I work on both sides of the stack: hardware and software. From designing schematics in EPLAN and laying out PCBs in Altium, to writing code and contributing to ML research.</p>
+          <p class="about-p">When I'm not buried in engineering work, I'm usually at the gym. I've been lifting for about a year and am currently at around an 850-lb total (bench, squat, deadlift) with a 275-lb bench press. I also play chess from time to time, hovering around an 800 rating and making questionable decisions on the board. I'm a big soccer fan too, especially when FC Barcelona is playing.</p>
+        </div>
+        <div class="about-right">
+          <div class="skills-block">
+            <div class="sk-heading">// Skills</div>
+            <div class="sk-group">
+              <div class="sk-label">Languages</div>
+              <div class="sk-tags">
+                <span>C++</span><span>Python</span><span>Verilog (HDL)</span><span>Ladder Logic</span><span>Great Cow BASIC</span><span>Processing</span><span>CSS</span><span>JavaScript</span><span>HTML</span>
+              </div>
+            </div>
+            <div class="sk-group">
+              <div class="sk-label">Hardware &amp; EE</div>
+              <div class="sk-tags">
+                <span>Altium Designer</span><span>EPLAN ProPanel</span><span>PCB Design</span><span>Arduino</span><span>Siemens TIA Portal</span><span>Soldering</span><span>TraxMaker</span><span>3D Modelling</span>
+              </div>
+            </div>
+            <div class="sk-group">
+              <div class="sk-label">Software</div>
+              <div class="sk-tags">
+                <span>Pandas</span><span>Git</span><span>Pygame</span><span>Machine Learning</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section section-alt" id="experience">
+    <div class="wrap">
+      <div class="sec-label">02 &mdash; Experience</div>
+      <h2 class="sec-big-title">Where I've worked.</h2>
+      <div class="exp-list">
+
+        <div class="exp-row reveal">
+          <div class="exp-left">
+            <div class="exp-year">2026</div>
+            <div class="exp-node"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-top">
+              <div>
+                <div class="exp-role">Control Systems Hardware Design Co-op</div>
+                <a href="https://atsautomation.com" target="_blank" rel="noopener" class="exp-co">ATS Corporation ↗</a>
+              </div>
+              <span class="exp-chip">Jan to May 2026</span>
+            </div>
+            <p class="exp-desc">Designed and refined electrical schematics in EPLAN, implementing changes to ensure system functionality. Built detailed Bills of Materials through vendor cross-referencing and component research. Collaborated with software engineers and electricians to troubleshoot systems under tight deadlines.</p>
+            <div class="exp-tags"><span>EPLAN</span><span>Schematics</span><span>BOM</span><span>Hardware Design</span></div>
+          </div>
+        </div>
+
+        <div class="exp-row reveal">
+          <div class="exp-left">
+            <div class="exp-year">2025</div>
+            <div class="exp-node"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-top">
+              <div>
+                <div class="exp-role">Electrical Subsystem Member</div>
+                <a href="https://www.uwfsae.ca/" target="_blank" rel="noopener" class="exp-co">UW Formula Electric ↗</a>
+              </div>
+              <span class="exp-chip">Sept 2025 to Present</span>
+            </div>
+            <p class="exp-desc">Designing PCBs in Altium Designer for sensor interface and power subsystems of a formula-style electric race car. Hands-on vehicle implementation in a competitive team environment.</p>
+            <div class="exp-tags"><span>Altium</span><span>PCB Design</span><span>Schematics</span></div>
+          </div>
+        </div>
+
+        <div class="exp-row reveal">
+          <div class="exp-left">
+            <div class="exp-year">2024</div>
+            <div class="exp-node"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-top">
+              <div>
+                <div class="exp-role">Student Researcher</div>
+                <span class="exp-co">UWaterloo &mdash; Dr. Eugene Li's Lab</span>
+              </div>
+              <span class="exp-chip">Nov 2024 to Feb 2025</span>
+            </div>
+            <p class="exp-desc">Contributed to a predictive maintenance project for CNC mill blades. Prepared datasets and supported training of an ML model for Remaining Useful Life estimation. Documented outputs to validate reliability and reduce industrial downtime.</p>
+            <div class="exp-tags"><span>Python</span><span>Pandas</span><span>ML</span><span>RUL</span></div>
+          </div>
+        </div>
+
+        <div class="exp-row reveal">
+          <div class="exp-left">
+            <div class="exp-year">2024</div>
+            <div class="exp-node"></div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-top">
+              <div>
+                <div class="exp-role">Electrical Engineering Design Co-op</div>
+                <a href="https://www.rittal.com/ca-en/" target="_blank" rel="noopener" class="exp-co">Rittal Canada ↗</a>
+              </div>
+              <span class="exp-chip">Jun to Jul 2024</span>
+            </div>
+            <p class="exp-desc">Designed motor control centers in EPLAN, created 3D macros, and designed copper busbar systems. Coordinated modifications at the assembly center and provided technical input in client meetings.</p>
+            <div class="exp-tags"><span>EPLAN</span><span>MCC Design</span><span>3D Macros</span><span>Busbar</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="sec-label">03 &mdash; Projects</div>
+      <h2 class="sec-big-title">Things I've built.</h2>
+      <div class="proj-grid">
+
+        <a href="project-firefighter.html" class="proj-card reveal" data-ref="Q1">
+          <div class="pc-img-wrap">
+            <img src="media/firefighter_bot.jpg" alt="Firefighter Robot" loading="lazy">
+            <div class="pc-hover-overlay"><span>View Project ↗</span></div>
+            <div class="pc-badges"><span class="pc-badge badge-video">▶ Video</span></div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-cats"><span class="pcat">Robotics</span></div>
+            <h3 class="pc-title">Inferno-1400</h3>
+            <p class="pc-desc">Autonomous firefighter robot that navigates a maze and extinguishes a candle.</p>
+          </div>
+        </a>
+
+        <a href="project-hrvita.html" class="proj-card reveal" data-ref="U2">
+          <div class="pc-img-wrap">
+            <img src="media/hrvita_main.jpg" alt="HRVita" loading="lazy">
+            <div class="pc-hover-overlay"><span>View Project ↗</span></div>
+            <div class="pc-badges">
+              <span class="pc-badge badge-video">▶ Video</span>
+              <span class="pc-badge badge-gh">&lt;/&gt; GitHub</span>
+            </div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-cats"><span class="pcat">IoT</span><span class="pcat">Health Tech</span></div>
+            <h3 class="pc-title">HRVita</h3>
+            <p class="pc-desc">Wrist-wearable IoT system that predicts hospital delirium 2 to 4 hours early.</p>
+          </div>
+        </a>
+
+        <a href="project-frenzyflyer.html" class="proj-card reveal" data-ref="SW3">
+          <div class="pc-img-wrap">
+            <img src="media/frenzy_menu.jpg" alt="Frenzy Flyer" loading="lazy">
+            <div class="pc-hover-overlay"><span>View Project ↗</span></div>
+            <div class="pc-badges">
+              <span class="pc-badge badge-video">▶ Video</span>
+              <span class="pc-badge badge-gh">&lt;/&gt; GitHub</span>
+            </div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-cats"><span class="pcat">Game Dev</span><span class="pcat">Python</span></div>
+            <h3 class="pc-title">Frenzy Flyer</h3>
+            <p class="pc-desc">A Python arcade game built with Pygame. Navigate obstacles and survive.</p>
+          </div>
+        </a>
+
+        <a href="project-sumo.html" class="proj-card reveal" data-ref="Q4">
+          <div class="pc-img-wrap">
+            <img src="media/sumo_bot.jpg" alt="Sumo Robot" loading="lazy">
+            <div class="pc-hover-overlay"><span>View Project ↗</span></div>
+            <div class="pc-badges"><span class="pc-badge badge-video">▶ Video</span></div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-cats"><span class="pcat">Robotics</span></div>
+            <h3 class="pc-title">Sumo Wrestling Robot</h3>
+            <p class="pc-desc">Combat robot that fought in a sumo ring using IR sensors to hunt and push opponents.</p>
+          </div>
+        </a>
+
+        <a href="project-linefollower.html" class="proj-card reveal" data-ref="Q5">
+          <div class="pc-img-wrap">
+            <img src="media/line_follower.jpg" alt="Line Follower Robot" loading="lazy">
+            <div class="pc-hover-overlay"><span>View Project ↗</span></div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-cats"><span class="pcat">Robotics</span></div>
+            <h3 class="pc-title">Line Follower Robot</h3>
+            <p class="pc-desc">Autonomous robot that follows a line using IR reflectance sensors.</p>
+          </div>
+        </a>
+
+        <div class="proj-card proj-card-wip reveal" data-ref="IC6">
+          <div class="pc-img-wrap pc-img-wip">
+            <div class="wip-inner">
+              <div class="wip-icon">&#9881;</div>
+              <div class="wip-text">In Progress</div>
+            </div>
+          </div>
+          <div class="pc-info">
+            <div class="pc-cats"><span class="pcat pcat-wip">Coming Soon</span></div>
+            <h3 class="pc-title">Full-Stack Project</h3>
+            <p class="pc-desc">A software project with a full frontend and backend. Details dropping soon.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-alt" id="contact">
+    <div class="wrap contact-wrap">
+      <div class="sec-label">04 &mdash; Contact</div>
+      <h2 class="contact-heading">Let's build<br>something.</h2>
+      <p class="contact-sub">I'm looking for software-focused co-op and internship opportunities. Have a project, role, or interesting engineering problem? Reach out.</p>
+      <div class="contact-actions">
+        <a href="mailto:a2aldiri@uwaterloo.ca" class="btn-main">Send an email ↗</a>
+        <a href="http://linkedin.com/in/ahmad-dirieh" target="_blank" rel="noopener" class="btn-ghost">LinkedIn ↗</a>
+        <a href="https://github.com/ahmadAldirieh" target="_blank" rel="noopener" class="btn-ghost">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>&copy; <span id="yr"></span> Ahmad Aldirieh</span>
+    <span class="footer-mono">Waterloo, ON</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
