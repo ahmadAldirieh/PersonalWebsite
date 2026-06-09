@@ -16,10 +16,12 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'DM Sans', sans-serif, 'DM Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   background: #060809;
   color: #c8ddd5;
   transition: background 0.3s, color 0.3s;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 [data-theme="light"] body {
