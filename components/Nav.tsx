@@ -44,7 +44,6 @@ export default function Nav() {
       style={{ background: "var(--bg, #060809)", borderColor: "rgba(0,220,180,0.22)" }}>
       <div className="max-w-6xl mx-auto px-8 h-14 flex items-center justify-between">
         <Link href="/" className="font-mono-custom text-sm font-medium tracking-widest flex items-center gap-2 text-accent">
-          <span className="w-2 h-2 rounded-full bg-[var(--accent)] status-glow" />
           AA
         </Link>
 
