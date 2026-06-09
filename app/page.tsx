@@ -131,8 +131,6 @@ export default function Home() {
                 </p>
               </div>
               <div className="border relative rounded-sm p-7" style={{ borderColor: "rgba(0,220,180,0.22)", background: "var(--bg2,#0f1419)" }}>
-                <span className="absolute -top-2.5 left-3 font-mono-custom text-[10px] text-[#2a3e36] px-1.5"
-                  style={{ background: "var(--bg2,#0f1419)" }}>U1</span>
                 <div className="font-mono-custom text-xs font-medium text-accent mb-6 tracking-widest uppercase">// Skills</div>
                 {Object.entries(skills).map(([label, items]) => (
                   <div key={label} className="mb-5 last:mb-0">
