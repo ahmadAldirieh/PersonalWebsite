@@ -5,7 +5,7 @@ import type { Project } from "@/lib/projects";
 export default function ProjectCard({ project }: { project: Project }) {
   if (project.wip) {
     return (
-      <div className="flex flex-col border opacity-60 cursor-default" data-ref={project.ref}
+      <div className="flex flex-col border opacity-60 cursor-default"
         style={{ borderColor: "rgba(0,220,180,0.1)", borderStyle: "dashed" }}>
         <div className="relative aspect-[4/3] flex items-center justify-center"
           style={{ background: "var(--bg2, #0f1419)" }}>
@@ -13,7 +13,6 @@ export default function ProjectCard({ project }: { project: Project }) {
             <div className="text-2xl opacity-30 mb-1">⚙</div>
             <div className="font-mono-custom text-xs tracking-widest text-[#2a3e36]">In Progress</div>
           </div>
-          <span className="absolute top-2 right-2 font-mono-custom text-[10px] text-[#2a3e36]">{project.ref}</span>
         </div>
         <div className="p-4 flex flex-col gap-1.5 border-t" style={{ borderColor: "rgba(0,220,180,0.08)" }}>
           <div className="flex gap-1 flex-wrap">
@@ -31,7 +30,6 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link href={`/projects/${project.slug}`}
       className="group flex flex-col border transition-colors cursor-pointer"
-      data-ref={project.ref}
       style={{ borderColor: "rgba(0,220,180,0.1)", background: "var(--bg, #060809)" }}
       onMouseEnter={e => (e.currentTarget.style.background = "var(--bg2, #0f1419)")}
       onMouseLeave={e => (e.currentTarget.style.background = "var(--bg, #060809)")}>
@@ -66,7 +64,6 @@ export default function ProjectCard({ project }: { project: Project }) {
               style={{ background: "rgba(0,220,180,0.12)" }}>&lt;/&gt; GitHub</span>
           )}
         </div>
-        <span className="absolute top-2 right-2 font-mono-custom text-[10px] text-[#2a3e36] z-10">{project.ref}</span>
       </div>
 
       <div className="p-4 flex flex-col gap-1.5 border-t" style={{ borderColor: "rgba(0,220,180,0.08)" }}>
